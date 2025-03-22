@@ -18,11 +18,12 @@ jobs:
       - name: Save Docker Image
         run: docker save my-docker-app -o my-docker-app.tar
 
-      - name: Upload Docker Image
+      - name: Upload Docker Image 
         uses: actions/upload-artifact@v3
         with:
           name: docker-image
-          path: my-docker-app.tar
+          path: my-docker-app.tar 
+          retention-days: 1
 
   push:
     runs-on: ubuntu-latest
