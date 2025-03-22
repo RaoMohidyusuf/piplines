@@ -27,5 +27,6 @@ jobs:
 
       - name: Push Docker Image
         run: |
+          docker build -t my-docker-app .
           docker tag my-docker-app ${{ secrets.DOCKER_USERNAME }}/my-docker-app:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/my-docker-app:latest
